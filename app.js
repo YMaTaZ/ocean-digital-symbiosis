@@ -64,7 +64,7 @@ let currentLang = 'zh';
 let isPublicView = true;
 
 // ==========================================
-// 2. 获取 DOM 元素与 ECharts 初始化 [cite: 37, 42]
+// 2. 获取 DOM 元素与 ECharts 初始化
 // ==========================================
 const langToggleBtn = document.getElementById('langToggleBtn');
 const viewToggleBtn = document.getElementById('viewToggleBtn');
@@ -105,7 +105,9 @@ function updateLanguage() {
     });
 
     // 单独处理视图切换按钮文字
-    viewToggleBtn.innerText = isPublicView ? i18nData[currentLang].viewBtnInst : i18nData[currentLang].viewBtnPub;
+    if (viewToggleBtn) {
+        viewToggleBtn.innerText = isPublicView ? i18nData[currentLang].viewBtnInst : i18nData[currentLang].viewBtnPub;
+    }
 
     // 动态无缝更新 ECharts 图表语言配置项 
     if (myChart) {
@@ -121,36 +123,48 @@ function updateLanguage() {
 }
 
 // ==========================================
-// 4. 事件监听器：视图切换与语言切换 [cite: 37, 44]
+// 4. 事件监听器：语言切换
 // ==========================================
-langToggleBtn.addEventListener('click', () => {
-    currentLang = currentLang === 'zh' ? 'en' : 'zh';
-    langToggleBtn.innerText = currentLang === 'zh' ? '🌐 English' : '🌐 中文';
-    updateLanguage();
-});
+if (langToggleBtn) {
+    langToggleBtn.addEventListener('click', () => {
+        currentLang = currentLang === 'zh' ? 'en' : 'zh';
+        langToggleBtn.innerText = currentLang === 'zh' ? '🌐 English' : '🌐 中文';
+        updateLanguage();
+        console.log('Language changed to:', currentLang);
+    });
+} else {
+    console.error('ERROR: langToggleBtn element not found!');
+}
 
-viewToggleBtn.addEventListener('click', () => {
-    isPublicView = !isPublicView;
+// ==========================================
+// 5. 事件监听器：视图切换
+// ==========================================
+if (viewToggleBtn) {
+    viewToggleBtn.addEventListener('click', () => {
+        isPublicView = !isPublicView;
 
-    if (isPublicView) {
-        publicView.style.display = 'block';
-        institutionalView.style.display = 'none';
-        document.body.classList.remove('bg-gray-100');
-        document.body.classList.add('bg-blue-50');
-        viewToggleBtn.classList.replace('bg-green-600', 'bg-blue-600');
-        viewToggleBtn.classList.replace('hover:bg-green-700', 'hover:bg-blue-700');
-    } else {
-        publicView.style.display = 'none';
-        institutionalView.style.display = 'block';
-        document.body.classList.remove('bg-blue-50');
-        document.body.classList.add('bg-gray-100');
-        viewToggleBtn.classList.replace('bg-blue-600', 'bg-green-600');
-        viewToggleBtn.classList.replace('hover:bg-blue-700', 'hover:bg-green-700');
-        // 切换到机构视图时，强制重新计算图表尺寸防渲染错位
-        if(myChart) setTimeout(() => myChart.resize(), 10);
-    }
-    updateLanguage();
-});
+        if (isPublicView) {
+            publicView.style.display = 'block';
+            institutionalView.style.display = 'none';
+            document.body.classList.remove('bg-gray-100');
+            document.body.classList.add('bg-blue-50');
+            viewToggleBtn.classList.replace('bg-green-600', 'bg-blue-600');
+            viewToggleBtn.classList.replace('hover:bg-green-700', 'hover:bg-blue-700');
+        } else {
+            publicView.style.display = 'none';
+            institutionalView.style.display = 'block';
+            document.body.classList.remove('bg-blue-50');
+            document.body.classList.add('bg-gray-100');
+            viewToggleBtn.classList.replace('bg-blue-600', 'bg-green-600');
+            viewToggleBtn.classList.replace('hover:bg-blue-700', 'hover:bg-green-700');
+            // 切换到机构视图时，强制重新计算图表尺寸防渲染错位
+            if(myChart) setTimeout(() => myChart.resize(), 10);
+        }
+        updateLanguage();
+    });
+} else {
+    console.error('ERROR: viewToggleBtn element not found!');
+}
 
 // 初始化页面语言渲染
 updateLanguage();
