@@ -73,7 +73,19 @@ const i18nData = {
         pubFisherDesc: "请暂缓底拖网作业，避免抛锚破坏底层生境。",
 
         // ── INSTITUTIONAL VIEW ──
-        instTitle: "// 环保部门数据决策大屏",
+        instTitle: "// 国家级海洋生态指挥中心",
+        instSubtitle: "多源传感器、AI 视觉与生态趋势研判正在同屏联动。",
+        instLiveBadge: "● 国家链路在线",
+        instSecurityBadge: "L4 安全通道 / 已加密",
+        instKpiThermalTitle: "热异常等级",
+        instKpiThermalDesc: "区域热压力持续 6 小时，需保持高频巡检。",
+        instKpiBleachTitle: "珊瑚白化风险",
+        instKpiBleachDesc: "AI 视觉模型检测到局部白化扩散趋势。",
+        instKpiCoverageTitle: "数字巡检覆盖",
+        instKpiCoverageDesc: "边缘节点与无人浮标回传稳定，覆盖持续提升。",
+        instKpiAlertTitle: "高优先级告警",
+        instKpiAlertDesc: "污染、热异常与微塑料目标已进入重点观察列表。",
+
         instDataTitle: "// 传感器阵列 — 物理数据",
         instTemp: "实时水温",
         instHigh: "偏高",
@@ -90,11 +102,20 @@ const i18nData = {
         instBio: "优势生物群落",
         instBioDesc: "雀鲷科 (正常)",
         instScanCoverage: "扫描覆盖面积",
+
+        instCVTitle: "// AI 视觉测绘全息模拟器",
+        instCVSubtitle: "水下监控画面、目标检测框与生态对象识别结果实时叠加。",
+        instCVFeed: "FEED / SCS-X-07",
+        instCVMode: "MODE / AUTO TRACKING",
         instCoralScanTitle: "// 珊瑚 AI 测绘全息扫描",
         instHoloID: "目标编号: SCS-X-07",
         instHoloDepth: "水深: 12.4m",
         instHoloConf: "置信度: 97.3%",
         instHoloAlert: "检测到白化区域",
+        instBBoxCoral: "[Obj: 鹿角珊瑚 | 漂白率: 18%]",
+        instBBoxFish: "[Obj: 雀鲷 | 活跃度: 正常]",
+        instBBoxPlastic: "[Obj: 微塑料聚集 | 密度: 中等]",
+
         instLegendHealthy: "健康",
         instLegendBleach: "白化",
         instLegendDead: "死亡",
@@ -105,10 +126,36 @@ const i18nData = {
         instGaugePollTitle: "// 水质污染",
         instPollAlert: "⚠ 轻度污染",
         instChartTitle: "// 生态抗冲击力 — 12 个月趋势",
+        instRadarTitle: "// 系统综合健康度雷达",
+        instOpsTitle: "// 快速态势摘要",
+        instLogTitle: "// 实时系统日志流",
+        instLogSubtitle: "节点状态、AI 识别事件与告警消息正在循环刷新。",
+        instLogBadge: "STREAM / ACTIVE",
+
         chartTitle: "生态抗冲击力 (近12个月模拟走势)",
         chartLegendCoral: "珊瑚健康指数",
         chartLegendSeagrass: "海草覆盖率",
         chartLegendTemp: "水温指数",
+
+        instRadarBio: "生物多样性",
+        instRadarWater: "水质纯净度",
+        instRadarBenthos: "底栖稳定性",
+        instRadarResistance: "系统抵抗力",
+        instRadarRecovery: "自我恢复力",
+        instRadarSeries: "综合健康度",
+
+        instLogs: [
+            { type: 'info', text: '[2026-04-29 10:24:08] 节点 #04 传输成功，水温上升 0.2°C。' },
+            { type: 'ai', text: '[AI-VISION] 海域 X 检测到鹿角珊瑚边缘白化，面积估计 12.6 m²。' },
+            { type: 'warn', text: '[警告] 浮标阵列 B-12 的污染指数连续 3 次高于区域基线。' },
+            { type: 'info', text: '[2026-04-29 10:24:19] 边缘节点 SCS-E2 已完成模型参数同步。' },
+            { type: 'ai', text: '[AI-VISION] 雀鲷活动保持正常，伴生鱼群未出现异常逃逸。' },
+            { type: 'alert', text: '[高优先级] 海域 X 东北侧发现微塑料聚集带，建议派发巡检任务。' },
+            { type: 'info', text: '[2026-04-29 10:24:31] 无人潜航器 U-07 已切换至低速近距扫描。' },
+            { type: 'warn', text: '[警告] 热异常阈值达到 II 级，建议保持高频采样。' },
+            { type: 'ai', text: '[AI-VISION] 珊瑚目标框 03 置信度提升至 97.3%，状态已锁定。' },
+            { type: 'info', text: '[2026-04-29 10:24:44] 指挥中心数据总线延迟稳定在 18 ms。' }
+        ]
     },
     en: {
         // Nav
@@ -181,7 +228,19 @@ const i18nData = {
         pubFisherDesc: "Please suspend bottom trawling and avoid anchoring to protect benthic habitats.",
 
         // ── INSTITUTIONAL VIEW ──
-        instTitle: "// ENVIRONMENTAL DEPT. DECISION DASHBOARD",
+        instTitle: "// NATIONAL OCEAN ECO COMMAND CENTER",
+        instSubtitle: "Multi-source sensors, AI vision, and ecological trend analysis are synchronized on one command screen.",
+        instLiveBadge: "● NATIONAL LINK ACTIVE",
+        instSecurityBadge: "L4 SECURE CHANNEL / ENCRYPTED",
+        instKpiThermalTitle: "THERMAL ANOMALY LEVEL",
+        instKpiThermalDesc: "Regional heat stress has persisted for 6 hours. High-frequency patrol is required.",
+        instKpiBleachTitle: "CORAL BLEACHING RISK",
+        instKpiBleachDesc: "The AI vision model has detected a localized bleaching expansion trend.",
+        instKpiCoverageTitle: "DIGITAL INSPECTION COVERAGE",
+        instKpiCoverageDesc: "Edge nodes and smart buoys are reporting stably, and coverage keeps increasing.",
+        instKpiAlertTitle: "HIGH-PRIORITY ALERTS",
+        instKpiAlertDesc: "Pollution, thermal anomaly, and microplastic targets are now on the priority watch list.",
+
         instDataTitle: "// SENSOR ARRAY — PHYSICAL",
         instTemp: "Water Temp",
         instHigh: "High",
@@ -198,11 +257,20 @@ const i18nData = {
         instBio: "Dominant Species",
         instBioDesc: "Pomacentridae (Normal)",
         instScanCoverage: "Scan Coverage Area",
+
+        instCVTitle: "// AI VISION SURVEY HOLO-SIMULATOR",
+        instCVSubtitle: "Underwater monitoring, bounding boxes, and ecological object recognition are layered in real time.",
+        instCVFeed: "FEED / SCS-X-07",
+        instCVMode: "MODE / AUTO TRACKING",
         instCoralScanTitle: "// CORAL AI HOLOGRAPHIC SCAN",
-        instHoloID: "TARGET_ID: SCS-X-07",
+        instHoloID: "TARGET ID: SCS-X-07",
         instHoloDepth: "DEPTH: 12.4m",
-        instHoloConf: "CONF: 97.3%",
-        instHoloAlert: "BLEACH DETECTED",
+        instHoloConf: "CONFIDENCE: 97.3%",
+        instHoloAlert: "BLEACHING REGION DETECTED",
+        instBBoxCoral: "[Obj: Acropora Coral | Bleaching: 18%]",
+        instBBoxFish: "[Obj: Damselfish | Activity: Normal]",
+        instBBoxPlastic: "[Obj: Microplastic Cluster | Density: Medium]",
+
         instLegendHealthy: "HEALTHY",
         instLegendBleach: "BLEACHING",
         instLegendDead: "DEAD",
@@ -213,10 +281,36 @@ const i18nData = {
         instGaugePollTitle: "// WQI POLL.",
         instPollAlert: "⚠ MILD CONTAMINATION",
         instChartTitle: "// ECOLOGICAL RESILIENCE — 12M TREND",
+        instRadarTitle: "// SYSTEM HEALTH RADAR",
+        instOpsTitle: "// RAPID SITUATION DIGEST",
+        instLogTitle: "// REAL-TIME SYSTEM LOG STREAM",
+        instLogSubtitle: "Node status, AI recognition events, and alert messages are cycling continuously.",
+        instLogBadge: "STREAM / ACTIVE",
+
         chartTitle: "Ecological Resilience Trend (12-Month Simulation)",
         chartLegendCoral: "Coral Health Index",
         chartLegendSeagrass: "Seagrass Coverage",
         chartLegendTemp: "Temp Index",
+
+        instRadarBio: "Biodiversity",
+        instRadarWater: "Water Purity",
+        instRadarBenthos: "Benthic Stability",
+        instRadarResistance: "System Resistance",
+        instRadarRecovery: "Self-Recovery",
+        instRadarSeries: "Integrated Health",
+
+        instLogs: [
+            { type: 'info', text: '[2026-04-29 10:24:08] Node #04 transfer complete. Water temperature increased by 0.2°C.' },
+            { type: 'ai', text: '[AI-VISION] Edge bleaching detected on Acropora coral in Area X. Estimated area: 12.6 m².' },
+            { type: 'warn', text: '[WARNING] Pollution index at buoy array B-12 exceeded the regional baseline for 3 consecutive reads.' },
+            { type: 'info', text: '[2026-04-29 10:24:19] Edge node SCS-E2 finished model parameter synchronization.' },
+            { type: 'ai', text: '[AI-VISION] Damselfish activity remains normal. No abnormal escape pattern was observed.' },
+            { type: 'alert', text: '[PRIORITY] A microplastic accumulation band was found northeast of Area X. Dispatch a patrol mission.' },
+            { type: 'info', text: '[2026-04-29 10:24:31] Autonomous vehicle U-07 switched to low-speed close-range scan mode.' },
+            { type: 'warn', text: '[WARNING] Thermal anomaly threshold has reached Level II. Maintain high-frequency sampling.' },
+            { type: 'ai', text: '[AI-VISION] Confidence for coral target box 03 increased to 97.3%. Status locked.' },
+            { type: 'info', text: '[2026-04-29 10:24:44] Command center data bus latency remains stable at 18 ms.' }
+        ]
     }
 };
 
@@ -226,47 +320,51 @@ let isPublicView = true;
 // ==========================================
 // 2. DOM 元素获取
 // ==========================================
-const langToggleBtn      = document.getElementById('langToggleBtn');
-const viewToggleBtn      = document.getElementById('viewToggleBtn');
-const publicView         = document.getElementById('publicView');
-const institutionalView  = document.getElementById('institutionalView');
+const langToggleBtn = document.getElementById('langToggleBtn');
+const viewToggleBtn = document.getElementById('viewToggleBtn');
+const publicView = document.getElementById('publicView');
+const institutionalView = document.getElementById('institutionalView');
 
 // Public interactive elements
-const alertTitleEl       = document.querySelector('[data-i18n="pubAlertTitle"]');
-const alertDescEl        = document.querySelector('[data-i18n="pubAlertDesc"]');
-const tempSlider         = document.getElementById('tempSlider');
-const phSlider           = document.getElementById('phSlider');
-const pollutionSlider    = document.getElementById('pollutionSlider');
-const tempValue          = document.getElementById('tempValue');
-const phValue            = document.getElementById('phValue');
-const pollutionValue     = document.getElementById('pollutionValue');
-const tempStatus         = document.getElementById('tempStatus');
-const phStatus           = document.getElementById('phStatus');
-const pollutionStatus    = document.getElementById('pollutionStatus');
+const alertTitleEl = document.querySelector('[data-i18n="pubAlertTitle"]');
+const alertDescEl = document.querySelector('[data-i18n="pubAlertDesc"]');
+const tempSlider = document.getElementById('tempSlider');
+const phSlider = document.getElementById('phSlider');
+const pollutionSlider = document.getElementById('pollutionSlider');
+const tempValue = document.getElementById('tempValue');
+const phValue = document.getElementById('phValue');
+const pollutionValue = document.getElementById('pollutionValue');
+const tempStatus = document.getElementById('tempStatus');
+const phStatus = document.getElementById('phStatus');
+const pollutionStatus = document.getElementById('pollutionStatus');
 const interactiveCoralCard = document.getElementById('interactiveCoralCard');
-const dynamicCoralArt    = document.getElementById('dynamicCoralArt');
-const coralStatusBadge   = document.getElementById('coralStatusBadge');
-const recoveryValue      = document.getElementById('recoveryValue');
-const recoveryBar        = document.getElementById('recoveryBar');
+const dynamicCoralArt = document.getElementById('dynamicCoralArt');
+const coralStatusBadge = document.getElementById('coralStatusBadge');
+const recoveryValue = document.getElementById('recoveryValue');
+const recoveryBar = document.getElementById('recoveryBar');
 
-// ==========================================
-// 3. ECharts 初始化，机构版保持原样
-// ==========================================
+// Institutional elements
 const chartDom = document.getElementById('mainChart');
-let myChart = null;
+const radarChartDom = document.getElementById('radarChart');
+const logStream = document.getElementById('logStream');
 
-function buildChartOption(lang) {
+let lineChart = null;
+let radarChart = null;
+let logInterval = null;
+let logOffset = 0;
+let resizeBound = false;
+
+// ==========================================
+// 3. ECharts 初始化（机构版）
+// ==========================================
+function buildLineChartOption(lang) {
     return {
         backgroundColor: 'transparent',
-        title: {
-            text: i18nData[lang].chartTitle,
-            textStyle: { color: '#94a3b8', fontSize: 13, fontWeight: 'normal', fontFamily: 'Orbitron, monospace' },
-            left: 'center'
-        },
+        animationDuration: 800,
         tooltip: {
             trigger: 'axis',
-            backgroundColor: 'rgba(4, 14, 30, 0.92)',
-            borderColor: 'rgba(6,182,212,0.35)',
+            backgroundColor: 'rgba(2, 12, 27, 0.96)',
+            borderColor: 'rgba(34,211,238,0.32)',
             borderWidth: 1,
             textStyle: { color: '#e2e8f0', fontSize: 12 }
         },
@@ -276,24 +374,25 @@ function buildChartOption(lang) {
                 i18nData[lang].chartLegendSeagrass,
                 i18nData[lang].chartLegendTemp
             ],
-            bottom: 0,
-            textStyle: { color: '#64748b', fontSize: 11 },
-            inactiveColor: '#334155'
+            top: 0,
+            textStyle: { color: '#94a3b8', fontSize: 11 },
+            itemWidth: 16,
+            itemHeight: 8
         },
-        grid: { left: '5%', right: '5%', bottom: '15%', top: '12%', containLabel: true },
+        grid: { left: '7%', right: '4%', top: 38, bottom: 28, containLabel: true },
         xAxis: {
             type: 'category',
             boundaryGap: false,
-            data: ['1','2','3','4','5','6','7','8','9','10','11','12'],
-            axisLabel: { color: '#475569', fontFamily: 'Orbitron, monospace', fontSize: 10 },
-            axisLine: { lineStyle: { color: 'rgba(6,182,212,0.2)' } },
+            data: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'],
+            axisLine: { lineStyle: { color: 'rgba(34,211,238,0.18)' } },
+            axisLabel: { color: '#64748b', fontFamily: 'Orbitron, monospace', fontSize: 10 },
             splitLine: { show: false }
         },
         yAxis: {
             type: 'value',
-            axisLabel: { color: '#475569', fontFamily: 'Orbitron, monospace', fontSize: 10 },
-            splitLine: { lineStyle: { type: 'dashed', color: 'rgba(6,182,212,0.1)' } },
-            axisLine: { show: false }
+            axisLine: { show: false },
+            axisLabel: { color: '#64748b', fontFamily: 'Orbitron, monospace', fontSize: 10 },
+            splitLine: { lineStyle: { type: 'dashed', color: 'rgba(34,211,238,0.1)' } }
         },
         series: [
             {
@@ -301,19 +400,19 @@ function buildChartOption(lang) {
                 type: 'line',
                 smooth: true,
                 symbol: 'circle',
-                symbolSize: 5,
-                itemStyle: { color: '#ef4444' },
-                lineStyle: { width: 2.5, color: '#ef4444' },
+                symbolSize: 6,
+                itemStyle: { color: '#fb7185' },
+                lineStyle: { width: 2.5, color: '#fb7185' },
                 areaStyle: {
                     color: {
                         type: 'linear',
-                        x:0,
-                        y:0,
-                        x2:0,
-                        y2:1,
+                        x: 0,
+                        y: 0,
+                        x2: 0,
+                        y2: 1,
                         colorStops: [
-                            {offset:0, color:'rgba(239,68,68,0.25)'},
-                            {offset:1, color:'rgba(239,68,68,0)'}
+                            { offset: 0, color: 'rgba(251,113,133,0.25)' },
+                            { offset: 1, color: 'rgba(251,113,133,0)' }
                         ]
                     }
                 },
@@ -324,19 +423,19 @@ function buildChartOption(lang) {
                 type: 'line',
                 smooth: true,
                 symbol: 'circle',
-                symbolSize: 5,
-                itemStyle: { color: '#10b981' },
-                lineStyle: { width: 2.5, color: '#10b981' },
+                symbolSize: 6,
+                itemStyle: { color: '#34d399' },
+                lineStyle: { width: 2.4, color: '#34d399' },
                 areaStyle: {
                     color: {
                         type: 'linear',
-                        x:0,
-                        y:0,
-                        x2:0,
-                        y2:1,
+                        x: 0,
+                        y: 0,
+                        x2: 0,
+                        y2: 1,
                         colorStops: [
-                            {offset:0, color:'rgba(16,185,129,0.2)'},
-                            {offset:1, color:'rgba(16,185,129,0)'}
+                            { offset: 0, color: 'rgba(52,211,153,0.2)' },
+                            { offset: 1, color: 'rgba(52,211,153,0)' }
                         ]
                     }
                 },
@@ -348,25 +447,117 @@ function buildChartOption(lang) {
                 smooth: true,
                 symbol: 'circle',
                 symbolSize: 5,
-                itemStyle: { color: '#f59e0b' },
-                lineStyle: { width: 2, color: '#f59e0b', type: 'dashed' },
-                data: [28, 28.2, 28.5, 29, 29.3, 29.5, 29.8, 30, 29.7, 29.5, 29.2, 29.0]
+                itemStyle: { color: '#fbbf24' },
+                lineStyle: { width: 2, type: 'dashed', color: '#fbbf24' },
+                data: [28.0, 28.2, 28.5, 29.0, 29.3, 29.5, 29.8, 30.0, 29.7, 29.5, 29.2, 29.0]
             }
         ]
     };
 }
 
-function initChart() {
-    if (!chartDom) return;
+function buildRadarChartOption(lang) {
+    return {
+        backgroundColor: 'transparent',
+        animationDuration: 900,
+        tooltip: {
+            trigger: 'item',
+            backgroundColor: 'rgba(2, 12, 27, 0.96)',
+            borderColor: 'rgba(34,211,238,0.32)',
+            borderWidth: 1,
+            textStyle: { color: '#e2e8f0', fontSize: 12 }
+        },
+        radar: {
+            radius: '66%',
+            splitNumber: 4,
+            axisName: {
+                color: '#a5f3fc',
+                fontSize: 11,
+                fontFamily: 'Orbitron, monospace'
+            },
+            splitLine: {
+                lineStyle: {
+                    color: [
+                        'rgba(34,211,238,0.10)',
+                        'rgba(34,211,238,0.14)',
+                        'rgba(34,211,238,0.18)',
+                        'rgba(34,211,238,0.22)'
+                    ]
+                }
+            },
+            splitArea: {
+                areaStyle: {
+                    color: [
+                        'rgba(15,23,42,0.22)',
+                        'rgba(8,47,73,0.18)',
+                        'rgba(15,23,42,0.12)',
+                        'rgba(8,47,73,0.08)'
+                    ]
+                }
+            },
+            axisLine: { lineStyle: { color: 'rgba(34,211,238,0.16)' } },
+            indicator: [
+                { name: i18nData[lang].instRadarBio, max: 100 },
+                { name: i18nData[lang].instRadarWater, max: 100 },
+                { name: i18nData[lang].instRadarBenthos, max: 100 },
+                { name: i18nData[lang].instRadarResistance, max: 100 },
+                { name: i18nData[lang].instRadarRecovery, max: 100 }
+            ]
+        },
+        series: [
+            {
+                name: i18nData[lang].instRadarSeries,
+                type: 'radar',
+                symbol: 'circle',
+                symbolSize: 6,
+                lineStyle: { color: '#38bdf8', width: 2.5 },
+                itemStyle: { color: '#67e8f9' },
+                areaStyle: { color: 'rgba(56,189,248,0.28)' },
+                data: [
+                    {
+                        value: [78, 84, 76, 69, 74],
+                        name: i18nData[lang].instRadarSeries
+                    }
+                ]
+            }
+        ]
+    };
+}
 
-    if (myChart) {
-        myChart.dispose();
-        myChart = null;
+function bindResize() {
+    if (resizeBound) return;
+
+    window.addEventListener('resize', () => {
+        if (lineChart) lineChart.resize();
+        if (radarChart) radarChart.resize();
+    });
+
+    resizeBound = true;
+}
+
+function initInstitutionalCharts() {
+    if (chartDom && !lineChart) {
+        lineChart = echarts.init(chartDom, null, { renderer: 'canvas' });
     }
 
-    myChart = echarts.init(chartDom, null, { renderer: 'canvas' });
-    myChart.setOption(buildChartOption(currentLang));
-    window.addEventListener('resize', () => myChart && myChart.resize());
+    if (radarChartDom && !radarChart) {
+        radarChart = echarts.init(radarChartDom, null, { renderer: 'canvas' });
+    }
+
+    bindResize();
+}
+
+function updateInstitutionalCharts() {
+    initInstitutionalCharts();
+
+    if (lineChart) {
+        lineChart.setOption(buildLineChartOption(currentLang), true);
+        lineChart.resize();
+    }
+
+    if (radarChart) {
+        radarChart.setOption(buildRadarChartOption(currentLang), true);
+        radarChart.resize();
+    }
 }
 
 // ==========================================
@@ -397,14 +588,12 @@ function updateCoralExperience() {
     const ph = Number(phSlider.value);
     const pollution = Number(pollutionSlider.value);
 
-    // 实时数值
     if (tempValue) tempValue.textContent = `${temp.toFixed(1)}°C`;
     if (phValue) phValue.textContent = ph.toFixed(2);
     if (pollutionValue) pollutionValue.textContent = `WQI ${Math.round(pollution)}`;
 
     [tempSlider, phSlider, pollutionSlider].forEach(updateSliderFill);
 
-    // 单项状态
     const tempDanger = temp >= 30;
     const tempWarn = temp >= 29 && temp < 30;
 
@@ -440,7 +629,6 @@ function updateCoralExperience() {
     let alertDescKey = 'pubAlertSafeDesc';
     let statusKey = 'pubCoralStatusHealthy';
 
-    // 风险分数用于恢复进度：越热、越酸、越脏，进度越低
     const tempRisk = Math.max(0, (temp - 28) * 7);
     const phRisk = Math.max(0, (8.1 - ph) * 28);
     const pollutionRisk = pollution * 0.38;
@@ -473,29 +661,16 @@ function updateCoralExperience() {
         statusKey = 'pubCoralStatusWatch';
     }
 
-    if (alertTitleEl) {
-        alertTitleEl.textContent = i18nData[currentLang][alertTitleKey];
-    }
-
-    if (alertDescEl) {
-        alertDescEl.textContent = i18nData[currentLang][alertDescKey];
-    }
+    if (alertTitleEl) alertTitleEl.textContent = i18nData[currentLang][alertTitleKey];
+    if (alertDescEl) alertDescEl.textContent = i18nData[currentLang][alertDescKey];
 
     if (interactiveCoralCard) {
-        interactiveCoralCard.classList.remove(
-            'coral-state-healthy',
-            'coral-state-watch',
-            'coral-state-danger'
-        );
+        interactiveCoralCard.classList.remove('coral-state-healthy', 'coral-state-watch', 'coral-state-danger');
         interactiveCoralCard.classList.add(`coral-state-${state}`);
     }
 
     if (dynamicCoralArt) {
-        dynamicCoralArt.classList.remove(
-            'healthy-state',
-            'watch-state',
-            'danger-state'
-        );
+        dynamicCoralArt.classList.remove('healthy-state', 'watch-state', 'danger-state');
         dynamicCoralArt.classList.add(`${state}-state`);
     }
 
@@ -504,9 +679,7 @@ function updateCoralExperience() {
         coralStatusBadge.textContent = i18nData[currentLang][statusKey];
     }
 
-    if (recoveryValue) {
-        recoveryValue.textContent = `${recovery}%`;
-    }
+    if (recoveryValue) recoveryValue.textContent = `${recovery}%`;
 
     if (recoveryBar) {
         recoveryBar.style.width = `${recovery}%`;
@@ -516,19 +689,61 @@ function updateCoralExperience() {
 }
 
 function bindPublicSliders() {
-    [tempSlider, phSlider, pollutionSlider].forEach(slider => {
+    [tempSlider, phSlider, pollutionSlider].forEach((slider) => {
         if (!slider) return;
         slider.addEventListener('input', updateCoralExperience);
     });
 }
 
 // ==========================================
-// 5. 语言渲染核心函数
+// 5. 机构版日志流
+// ==========================================
+function renderLogStream() {
+    if (!logStream) return;
+
+    const logs = i18nData[currentLang].instLogs || [];
+    const visibleCount = 7;
+
+    if (!logs.length) {
+        logStream.innerHTML = '';
+        return;
+    }
+
+    const visibleLogs = Array.from({ length: visibleCount }, (_, index) => {
+        return logs[(logOffset + index) % logs.length];
+    });
+
+    logStream.innerHTML = visibleLogs.map((entry) => {
+        return `<div class="terminal-line ${entry.type}">${entry.text}</div>`;
+    }).join('');
+}
+
+function startLogStream() {
+    stopLogStream();
+    renderLogStream();
+
+    logInterval = window.setInterval(() => {
+        if (isPublicView) return;
+        const logs = i18nData[currentLang].instLogs || [];
+        if (!logs.length) return;
+        logOffset = (logOffset + 1) % logs.length;
+        renderLogStream();
+    }, 2200);
+}
+
+function stopLogStream() {
+    if (logInterval) {
+        window.clearInterval(logInterval);
+        logInterval = null;
+    }
+}
+
+// ==========================================
+// 6. 语言渲染核心函数
 // ==========================================
 function updateLanguage() {
-    document.querySelectorAll('[data-i18n]').forEach(el => {
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
         const key = el.getAttribute('data-i18n');
-
         if (i18nData[currentLang][key] !== undefined) {
             el.innerText = i18nData[currentLang][key];
         }
@@ -544,38 +759,22 @@ function updateLanguage() {
         langToggleBtn.innerText = currentLang === 'zh' ? '🌐 English' : '🌐 中文';
     }
 
-    if (myChart) {
-        myChart.setOption({
-            title:  { text: i18nData[currentLang].chartTitle },
-            legend: {
-                data: [
-                    i18nData[currentLang].chartLegendCoral,
-                    i18nData[currentLang].chartLegendSeagrass,
-                    i18nData[currentLang].chartLegendTemp
-                ]
-            },
-            series: [
-                { name: i18nData[currentLang].chartLegendCoral },
-                { name: i18nData[currentLang].chartLegendSeagrass },
-                { name: i18nData[currentLang].chartLegendTemp }
-            ]
-        });
-    }
-
-    // 动态文本必须在静态 i18n 渲染后再计算一次，避免被 data-i18n 默认值覆盖
     updateCoralExperience();
+    renderLogStream();
+
+    if (!isPublicView) {
+        updateInstitutionalCharts();
+    }
 }
 
 // ==========================================
-// 6. 事件监听器
+// 7. 事件监听器
 // ==========================================
 if (langToggleBtn) {
     langToggleBtn.addEventListener('click', () => {
         currentLang = currentLang === 'zh' ? 'en' : 'zh';
         updateLanguage();
     });
-} else {
-    console.error('ERROR: langToggleBtn not found');
 }
 
 if (viewToggleBtn) {
@@ -587,26 +786,27 @@ if (viewToggleBtn) {
             institutionalView.style.display = 'none';
             document.body.classList.add('pub-mode');
             viewToggleBtn.classList.remove('green-mode');
+            stopLogStream();
         } else {
             publicView.style.display = 'none';
             institutionalView.style.display = 'block';
             document.body.classList.remove('pub-mode');
             viewToggleBtn.classList.add('green-mode');
 
-            setTimeout(() => {
-                initChart();
-            }, 50);
+            window.setTimeout(() => {
+                updateInstitutionalCharts();
+                startLogStream();
+            }, 60);
         }
 
         updateLanguage();
     });
-} else {
-    console.error('ERROR: viewToggleBtn not found');
 }
 
 // ==========================================
-// 7. 初始化
+// 8. 初始化
 // ==========================================
 bindPublicSliders();
 document.body.classList.add('pub-mode');
 updateLanguage();
+renderLogStream();
