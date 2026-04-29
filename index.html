@@ -1,3 +1,6 @@
+# index.html
+
+```html
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -151,16 +154,16 @@
             <!-- Action Guide -->
             <div class="glass-card p-6 rounded-2xl">
                 <h3 class="text-base font-bold mb-4 text-cyan-300" data-i18n="pubGuideTitle">行动指南</h3>
-                <ul class="space-y-3">
-                    <li class="guide-item flex items-start gap-3 p-3 rounded-xl hover-float">
-                        <span class="text-2xl">🤿</span>
-                        <p class="text-sm leading-relaxed text-gray-200"><strong class="text-white" data-i18n="pubTourist">游客群体：</strong><span data-i18n="pubTouristDesc">请避免在该区域潜水踩踏，使用环保型防晒霜。</span></p>
-                    </li>
-                    <li class="guide-item flex items-start gap-3 p-3 rounded-xl hover-float">
-                        <span class="text-2xl">🎣</span>
-                        <p class="text-sm leading-relaxed text-gray-200"><strong class="text-white" data-i18n="pubFisher">渔民群体：</strong><span data-i18n="pubFisherDesc">请暂缓底拖网作业，避免抛锚破坏底层生境。</span></p>
-                    </li>
-                </ul>
+                <div class="space-y-4 text-sm">
+                    <div>
+                        <p class="font-semibold text-yellow-300" data-i18n="pubTourist">游客群体：</p>
+                        <p class="text-gray-300 mt-1" data-i18n="pubTouristDesc">请避免在该区域潜水踩踏，使用环保型防晒霜。</p>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-orange-300" data-i18n="pubFisher">渔民群体：</p>
+                        <p class="text-gray-300 mt-1" data-i18n="pubFisherDesc">请暂缓底拖网作业，避免抛锚破坏底层生境。</p>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -169,202 +172,292 @@
     <!-- ========================================================= -->
     <!-- INSTITUTIONAL VIEW                                         -->
     <!-- ========================================================= -->
-    <div id="institutionalView" class="container mx-auto px-4 py-8 hidden">
+    <div id="institutionalView" class="hidden px-5 py-5 lg:px-6 lg:py-6">
+        <div class="command-shell max-w-[1800px] mx-auto">
 
-        <div class="flex items-center justify-between mb-6">
-            <h2 class="font-orbitron text-xl font-bold text-cyan-300 tracking-widest" data-i18n="instTitle">// ENVIRONMENTAL DEPT. DECISION DASHBOARD</h2>
-            <span class="text-xs font-orbitron text-cyan-500/60 animate-pulse">● LIVE</span>
+            <!-- ===== COMMAND HEADER ===== -->
+            <section class="command-hero glass-panel rounded-3xl p-5 lg:p-6 mb-5">
+                <div class="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-5">
+                    <div>
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <span class="command-badge" data-i18n="instLiveBadge">● 国家级联动在线</span>
+                            <span class="command-badge subtle" data-i18n="instSecurityBadge">L4 安全通道 / 已加密</span>
+                        </div>
+                        <h2 class="command-title text-2xl lg:text-4xl font-black text-white font-orbitron tracking-[0.18em] uppercase" data-i18n="instTitle">// 国家海洋生态指挥中心</h2>
+                        <p class="command-subtitle text-sm lg:text-base text-slate-300 mt-3 max-w-4xl leading-relaxed" data-i18n="instSubtitle">多源传感器、AI 视觉与生态趋势分析同步汇聚于同一指挥屏。</p>
+                    </div>
+                    <div class="command-header-grid">
+                        <div class="hero-chip">
+                            <span class="chip-label" data-i18n="instTemp">实时水温</span>
+                            <span class="chip-value">29.5°C</span>
+                        </div>
+                        <div class="hero-chip">
+                            <span class="chip-label" data-i18n="instPH">海水 pH</span>
+                            <span class="chip-value">7.80</span>
+                        </div>
+                        <div class="hero-chip">
+                            <span class="chip-label" data-i18n="instPollution">水质污染指数</span>
+                            <span class="chip-value">WQI 45</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== KPI CARDS ===== -->
+            <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mb-5">
+                <article class="kpi-card glass-panel rounded-2xl p-4">
+                    <div class="kpi-topline">
+                        <span class="kpi-dot cyan"></span>
+                        <span class="kpi-mini">01</span>
+                    </div>
+                    <p class="kpi-title" data-i18n="instKpiThermalTitle">热异常等级</p>
+                    <div class="kpi-mainline">
+                        <span class="kpi-value text-cyan-300">LEVEL II</span>
+                        <span class="kpi-trend up">+12%</span>
+                    </div>
+                    <p class="kpi-desc" data-i18n="instKpiThermalDesc">区域热压力已持续 6 小时，需要提高巡检频率。</p>
+                </article>
+
+                <article class="kpi-card glass-panel rounded-2xl p-4">
+                    <div class="kpi-topline">
+                        <span class="kpi-dot rose"></span>
+                        <span class="kpi-mini">02</span>
+                    </div>
+                    <p class="kpi-title" data-i18n="instKpiBleachTitle">珊瑚漂白风险</p>
+                    <div class="kpi-mainline">
+                        <span class="kpi-value text-rose-300">18%</span>
+                        <span class="kpi-trend up">+4.2%</span>
+                    </div>
+                    <p class="kpi-desc" data-i18n="instKpiBleachDesc">AI 视觉模型检测到局部白化范围出现扩张趋势。</p>
+                </article>
+
+                <article class="kpi-card glass-panel rounded-2xl p-4">
+                    <div class="kpi-topline">
+                        <span class="kpi-dot emerald"></span>
+                        <span class="kpi-mini">03</span>
+                    </div>
+                    <p class="kpi-title" data-i18n="instKpiCoverageTitle">数字巡检覆盖率</p>
+                    <div class="kpi-mainline">
+                        <span class="kpi-value text-emerald-300">92.4%</span>
+                        <span class="kpi-trend up">+1.8%</span>
+                    </div>
+                    <p class="kpi-desc" data-i18n="instKpiCoverageDesc">边缘节点与智能浮标稳定上报，覆盖范围持续提升。</p>
+                </article>
+
+                <article class="kpi-card glass-panel rounded-2xl p-4">
+                    <div class="kpi-topline">
+                        <span class="kpi-dot amber"></span>
+                        <span class="kpi-mini">04</span>
+                    </div>
+                    <p class="kpi-title" data-i18n="instKpiAlertTitle">高优先级告警</p>
+                    <div class="kpi-mainline">
+                        <span class="kpi-value text-amber-300">03</span>
+                        <span class="kpi-trend alert">PRIORITY</span>
+                    </div>
+                    <p class="kpi-desc" data-i18n="instKpiAlertDesc">污染、热异常与微塑料目标已进入重点观察列表。</p>
+                </article>
+            </section>
+
+            <!-- ===== MAIN DASHBOARD GRID ===== -->
+            <section class="command-grid mb-5">
+                <!-- LEFT COLUMN -->
+                <div class="left-stack space-y-5">
+                    <!-- SENSOR + AI KPIs -->
+                    <div class="grid grid-cols-1 2xl:grid-cols-2 gap-5">
+                        <div class="glass-panel rounded-2xl p-5 data-panel">
+                            <div class="panel-head">
+                                <h3 class="panel-title" data-i18n="instDataTitle">// 传感器阵列 — 物理数据</h3>
+                            </div>
+                            <div class="metric-grid mt-4">
+                                <div class="metric-card-inst">
+                                    <div class="metric-label" data-i18n="instTemp">实时水温</div>
+                                    <div class="metric-value text-cyan-300">29.5°C</div>
+                                    <div class="metric-tag warn" data-i18n="instHigh">偏高</div>
+                                </div>
+                                <div class="metric-card-inst">
+                                    <div class="metric-label" data-i18n="instSalinity">海水盐度</div>
+                                    <div class="metric-value text-sky-300">35 PSU</div>
+                                    <div class="metric-tag safe">STABLE</div>
+                                </div>
+                                <div class="metric-card-inst">
+                                    <div class="metric-label" data-i18n="instDO">溶解氧量</div>
+                                    <div class="metric-value text-emerald-300">6.8 mg/L</div>
+                                    <div class="metric-tag safe">NORMAL</div>
+                                </div>
+                                <div class="metric-card-inst">
+                                    <div class="metric-label" data-i18n="instPH">海水 pH</div>
+                                    <div class="metric-value text-teal-300">7.80</div>
+                                    <div class="metric-tag safe" data-i18n="instPHStatus">正常范围</div>
+                                </div>
+                                <div class="metric-card-inst">
+                                    <div class="metric-label" data-i18n="instPollution">水质污染指数</div>
+                                    <div class="metric-value text-violet-300">WQI 45</div>
+                                    <div class="metric-tag mild" data-i18n="instPollutionStatus">轻度影响</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-panel rounded-2xl p-5 data-panel">
+                            <div class="panel-head">
+                                <h3 class="panel-title" data-i18n="instAITitle">// AI 视觉 — 量化指标</h3>
+                            </div>
+                            <div class="metric-grid mt-4">
+                                <div class="metric-card-inst">
+                                    <div class="metric-label" data-i18n="instCoralDeg">珊瑚退化率</div>
+                                    <div class="metric-value text-rose-300">18%</div>
+                                    <div class="metric-tag danger" data-i18n="instWarnTrigger">触发预警</div>
+                                </div>
+                                <div class="metric-card-inst">
+                                    <div class="metric-label" data-i18n="instSeagrass">海草床覆盖率</div>
+                                    <div class="metric-value text-emerald-300">71.3%</div>
+                                    <div class="metric-tag safe">UP</div>
+                                </div>
+                                <div class="metric-card-inst">
+                                    <div class="metric-label" data-i18n="instBio">优势生物群落</div>
+                                    <div class="metric-value text-sky-300" data-i18n="instBioDesc">雀鲷科 (正常)</div>
+                                    <div class="metric-tag safe">NORMAL</div>
+                                </div>
+                                <div class="metric-card-inst">
+                                    <div class="metric-label" data-i18n="instScanCoverage">扫描覆盖面积</div>
+                                    <div class="metric-value text-cyan-300">2.4 km²</div>
+                                    <div class="metric-tag safe">SYNCED</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COMPUTER VISION SIMULATOR -->
+                    <div class="glass-panel rounded-3xl p-5 cv-panel">
+                        <div class="panel-head flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+                            <div>
+                                <h3 class="panel-title" data-i18n="instCVTitle">// AI 视觉测绘全息模拟器</h3>
+                                <p class="panel-subtitle" data-i18n="instCVSubtitle">水下监控、识别框与生态目标识别实时叠加显示。</p>
+                            </div>
+                            <div class="flex gap-2 flex-wrap">
+                                <span class="tech-chip" data-i18n="instCVFeed">FEED / SCS-X-07</span>
+                                <span class="tech-chip" data-i18n="instCVMode">MODE / AUTO TRACKING</span>
+                            </div>
+                        </div>
+
+                        <div class="cv-screen mt-5">
+                            <div class="cv-grid"></div>
+                            <div class="scanline"></div>
+                            <div class="focus-corner tl"></div>
+                            <div class="focus-corner tr"></div>
+                            <div class="focus-corner bl"></div>
+                            <div class="focus-corner br"></div>
+
+                            <div class="water-glow"></div>
+                            <div class="reef-blob reef-a"></div>
+                            <div class="reef-blob reef-b"></div>
+                            <div class="reef-blob reef-c"></div>
+                            <div class="fish-silhouette fish-a"></div>
+                            <div class="fish-silhouette fish-b"></div>
+
+                            <div class="bbox coral-box">
+                                <span class="bbox-label" data-i18n="instBBoxCoral">[Obj: 鹿角珊瑚 | 漂白率: 18%]</span>
+                            </div>
+                            <div class="bbox fish-box">
+                                <span class="bbox-label" data-i18n="instBBoxFish">[Obj: 雀鲷 | 活跃度: 正常]</span>
+                            </div>
+                            <div class="bbox plastic-box">
+                                <span class="bbox-label" data-i18n="instBBoxPlastic">[Obj: 微塑料聚集 | 密度: 中]</span>
+                            </div>
+
+                            <div class="cv-overlay-info left">
+                                <p data-i18n="instHoloID">目标编号: SCS-X-07</p>
+                                <p data-i18n="instHoloDepth">水深: 12.4m</p>
+                            </div>
+                            <div class="cv-overlay-info right">
+                                <p data-i18n="instHoloConf">置信度: 97.3%</p>
+                                <p class="text-rose-300" data-i18n="instHoloAlert">检测到白化区域</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN -->
+                <div class="right-stack space-y-5">
+                    <div class="grid grid-cols-1 xl:grid-cols-3 gap-5">
+                        <div class="glass-panel rounded-2xl p-5 xl:col-span-2 chart-panel">
+                            <div class="panel-head">
+                                <h3 class="panel-title" data-i18n="instChartTitle">// 生态抗冲击力 — 12 个月趋势</h3>
+                            </div>
+                            <div id="mainChart" class="chart-box mt-4"></div>
+                        </div>
+                        <div class="glass-panel rounded-2xl p-5 radar-panel">
+                            <div class="panel-head">
+                                <h3 class="panel-title" data-i18n="instRadarTitle">// 系统综合健康度雷达</h3>
+                            </div>
+                            <div id="radarChart" class="radar-box mt-4"></div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 2xl:grid-cols-2 gap-5">
+                        <div class="glass-panel rounded-2xl p-5 scan-summary-panel">
+                            <div class="panel-head">
+                                <h3 class="panel-title" data-i18n="instCoralScanTitle">// 珊瑚 AI 测绘全息扫描</h3>
+                            </div>
+                            <div class="holo-stage mt-5">
+                                <div class="holo-core"></div>
+                                <div class="holo-ring r1"></div>
+                                <div class="holo-ring r2"></div>
+                                <div class="holo-ring r3"></div>
+                                <div class="holo-dot d1"></div>
+                                <div class="holo-dot d2"></div>
+                                <div class="holo-dot d3"></div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-3 mt-5 text-sm">
+                                <div class="holo-info" data-i18n="instHoloID">目标编号: SCS-X-07</div>
+                                <div class="holo-info" data-i18n="instHoloDepth">水深: 12.4m</div>
+                                <div class="holo-info" data-i18n="instHoloConf">置信度: 97.3%</div>
+                                <div class="holo-info alert" data-i18n="instHoloAlert">检测到白化区域</div>
+                            </div>
+                            <div class="legend-strip mt-5">
+                                <span class="legend-item"><i class="legend-dot healthy"></i><span data-i18n="instLegendHealthy">健康</span></span>
+                                <span class="legend-item"><i class="legend-dot bleach"></i><span data-i18n="instLegendBleach">白化</span></span>
+                                <span class="legend-item"><i class="legend-dot dead"></i><span data-i18n="instLegendDead">死亡</span></span>
+                            </div>
+                        </div>
+
+                        <div class="glass-panel rounded-2xl p-5 ops-panel">
+                            <div class="panel-head">
+                                <h3 class="panel-title" data-i18n="instOpsTitle">// 快速态势摘要</h3>
+                            </div>
+                            <div class="ops-grid mt-5">
+                                <div class="gauge-card">
+                                    <p class="gauge-title" data-i18n="instGaugeTempTitle">// 水温</p>
+                                    <div class="mini-gauge thermal"><span>71%</span></div>
+                                    <p class="gauge-note" data-i18n="instTempAlert">▲ 超出安全阈值</p>
+                                </div>
+                                <div class="gauge-card">
+                                    <p class="gauge-title" data-i18n="instGaugePHTitle">// 酸碱度</p>
+                                    <div class="mini-gauge ph"><span>82%</span></div>
+                                    <p class="gauge-note" data-i18n="instPHAlert">✓ 正常范围内</p>
+                                </div>
+                                <div class="gauge-card full">
+                                    <p class="gauge-title" data-i18n="instGaugePollTitle">// 水质污染</p>
+                                    <div class="mini-gauge pollution"><span>45%</span></div>
+                                    <p class="gauge-note" data-i18n="instPollAlert">⚠ 轻度污染</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== REAL-TIME TERMINAL LOG ===== -->
+            <section class="glass-panel rounded-3xl p-5 terminal-panel">
+                <div class="panel-head flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+                    <div>
+                        <h3 class="panel-title" data-i18n="instLogTitle">// 实时系统日志流</h3>
+                        <p class="panel-subtitle" data-i18n="instLogSubtitle">节点状态、AI 识别事件与告警信息持续循环更新。</p>
+                    </div>
+                    <span class="terminal-badge" data-i18n="instLogBadge">STREAM / ACTIVE</span>
+                </div>
+                <div id="logStream" class="terminal-stream mt-4"></div>
+            </section>
         </div>
-
-        <!-- Top Row: Sensors + AI Metrics -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
-
-            <!-- Sensor Data Panel -->
-            <div class="tech-panel p-5 rounded-xl relative overflow-hidden">
-                <div class="panel-corner tl"></div><div class="panel-corner tr"></div>
-                <div class="panel-corner bl"></div><div class="panel-corner br"></div>
-                <h3 class="font-orbitron text-sm font-bold mb-4 text-blue-400 tracking-widest" data-i18n="instDataTitle">// SENSOR ARRAY — PHYSICAL</h3>
-                <ul class="space-y-3 font-mono text-sm">
-                    <li class="flex items-center justify-between border-b border-gray-700/40 pb-2">
-                        <span class="text-gray-400"><span class="live-dot warn"></span><span data-i18n="instTemp">实时水温</span></span>
-                        <span class="text-yellow-400 font-bold">29.5 °C <span class="text-xs text-yellow-500/70">(<span data-i18n="instHigh">偏高</span>)</span></span>
-                    </li>
-                    <li class="flex items-center justify-between border-b border-gray-700/40 pb-2">
-                        <span class="text-gray-400"><span class="live-dot normal"></span><span data-i18n="instSalinity">海水盐度</span></span>
-                        <span class="text-cyan-300 font-bold">34.2 <span class="text-xs text-gray-500">PSU</span></span>
-                    </li>
-                    <li class="flex items-center justify-between border-b border-gray-700/40 pb-2">
-                        <span class="text-gray-400"><span class="live-dot normal"></span><span data-i18n="instDO">溶解氧量</span></span>
-                        <span class="text-emerald-400 font-bold">6.5 <span class="text-xs text-gray-500">mg/L</span></span>
-                    </li>
-                    <!-- NEW: pH -->
-                    <li class="flex items-center justify-between border-b border-gray-700/40 pb-2">
-                        <span class="text-gray-400"><span class="live-dot normal"></span><span data-i18n="instPH">海水 pH</span></span>
-                        <span class="text-emerald-400 font-bold">7.80 <span class="text-xs text-gray-500">(<span data-i18n="instPHStatus">正常范围</span>)</span></span>
-                    </li>
-                    <!-- NEW: Pollution -->
-                    <li class="flex items-center justify-between">
-                        <span class="text-gray-400"><span class="live-dot warn"></span><span data-i18n="instPollution">水质污染指数</span></span>
-                        <span class="text-violet-400 font-bold">WQI 45 <span class="text-xs text-violet-500/70">(<span data-i18n="instPollutionStatus">轻度影响</span>)</span></span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- AI Metrics Panel -->
-            <div class="tech-panel p-5 rounded-xl relative overflow-hidden">
-                <div class="panel-corner tl"></div><div class="panel-corner tr"></div>
-                <div class="panel-corner bl"></div><div class="panel-corner br"></div>
-                <h3 class="font-orbitron text-sm font-bold mb-4 text-green-400 tracking-widest" data-i18n="instAITitle">// AI-VISION — QUANTIFIED</h3>
-                <ul class="space-y-3 font-mono text-sm">
-                    <li class="flex items-center justify-between border-b border-gray-700/40 pb-2">
-                        <span class="text-gray-400"><span class="live-dot warn"></span><span data-i18n="instCoralDeg">珊瑚退化率</span></span>
-                        <span class="text-red-400 font-bold">15% <span class="text-xs text-red-500/70">(<span data-i18n="instWarnTrigger">触发预警</span>)</span></span>
-                    </li>
-                    <li class="flex items-center justify-between border-b border-gray-700/40 pb-2">
-                        <span class="text-gray-400"><span class="live-dot normal"></span><span data-i18n="instSeagrass">海草床覆盖率</span></span>
-                        <span class="text-emerald-400 font-bold">68%</span>
-                    </li>
-                    <li class="flex items-center justify-between border-b border-gray-700/40 pb-2">
-                        <span class="text-gray-400"><span class="live-dot normal"></span><span data-i18n="instBio">优势生物群落</span></span>
-                        <span class="text-cyan-300 font-bold text-xs" data-i18n="instBioDesc">雀鲷科 (正常)</span>
-                    </li>
-                    <li class="flex items-center justify-between">
-                        <span class="text-gray-400"><span class="live-dot normal"></span><span data-i18n="instScanCoverage">扫描覆盖面积</span></span>
-                        <span class="text-cyan-400 font-bold">2.4 km²</span>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-
-        <!-- Second Row: Coral Holographic Scan + Three Metric Gauges -->
-        <div class="grid grid-cols-1 md:grid-cols-5 gap-5 mb-5">
-
-            <!-- ===== CORAL AI SCAN HOLOGRAPHIC PANEL ===== -->
-            <div class="md:col-span-3 tech-panel p-5 rounded-xl relative overflow-hidden holo-panel">
-                <div class="panel-corner tl"></div><div class="panel-corner tr"></div>
-                <div class="panel-corner bl"></div><div class="panel-corner br"></div>
-
-                <div class="flex items-center justify-between mb-3">
-                    <h3 class="font-orbitron text-sm font-bold text-cyan-400 tracking-widest" data-i18n="instCoralScanTitle">// CORAL AI 测绘全息扫描</h3>
-                    <span class="text-xs font-orbitron text-cyan-500 animate-pulse">◉ SCANNING</span>
-                </div>
-
-                <!-- Holographic Grid Container -->
-                <div class="holo-container relative rounded-lg overflow-hidden" style="height:220px;">
-                    <!-- Grid lines -->
-                    <div class="holo-grid"></div>
-                    <!-- Scan beam -->
-                    <div class="scan-beam"></div>
-                    <!-- Corner brackets -->
-                    <div class="holo-bracket top-left"></div>
-                    <div class="holo-bracket top-right"></div>
-                    <div class="holo-bracket bottom-left"></div>
-                    <div class="holo-bracket bottom-right"></div>
-                    <!-- Center cross -->
-                    <div class="holo-crosshair"></div>
-                    <!-- Coral wireframe shapes -->
-                    <div class="holo-coral-group">
-                        <div class="holo-coral hc1"></div>
-                        <div class="holo-coral hc2"></div>
-                        <div class="holo-coral hc3"></div>
-                        <div class="holo-coral hc4"></div>
-                        <div class="holo-coral hc5"></div>
-                    </div>
-                    <!-- Data overlays -->
-                    <div class="holo-overlay top-2 left-3 text-cyan-400 font-orbitron text-xs">
-                        <div data-i18n="instHoloID">TARGET_ID: SCS-X-07</div>
-                        <div data-i18n="instHoloDepth">DEPTH: 12.4m</div>
-                    </div>
-                    <div class="holo-overlay bottom-2 right-3 text-right text-cyan-400 font-orbitron text-xs">
-                        <div data-i18n="instHoloConf">CONF: 97.3%</div>
-                        <div class="text-red-400" data-i18n="instHoloAlert">BLEACH DETECTED</div>
-                    </div>
-                    <!-- Radar circles -->
-                    <div class="holo-radar-ring r1"></div>
-                    <div class="holo-radar-ring r2"></div>
-                </div>
-                <div class="mt-3 flex gap-4 text-xs font-orbitron text-gray-500">
-                    <span>■ <span class="text-cyan-500" data-i18n="instLegendHealthy">HEALTHY</span></span>
-                    <span>■ <span class="text-yellow-500" data-i18n="instLegendBleach">BLEACHING</span></span>
-                    <span>■ <span class="text-red-500" data-i18n="instLegendDead">DEAD</span></span>
-                </div>
-            </div>
-
-            <!-- Three Metric Gauges (Institutional right column) -->
-            <div class="md:col-span-2 flex flex-col gap-4">
-
-                <!-- Water Temp Gauge -->
-                <div class="tech-panel flex-1 p-4 rounded-xl relative overflow-hidden">
-                    <div class="panel-corner tl"></div><div class="panel-corner tr"></div>
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="font-orbitron text-xs text-yellow-400 tracking-widest" data-i18n="instGaugeTempTitle">// TEMP</span>
-                        <span class="live-dot warn"></span>
-                    </div>
-                    <div class="flex items-end gap-2">
-                        <span class="font-orbitron text-3xl font-black text-yellow-300">29.5</span>
-                        <span class="text-yellow-500 text-sm mb-1">°C</span>
-                    </div>
-                    <div class="mt-2 h-1.5 bg-gray-700 rounded-full overflow-hidden">
-                        <div class="h-full rounded-full bg-gradient-to-r from-blue-500 via-yellow-400 to-red-500" style="width:75%"></div>
-                    </div>
-                    <div class="flex justify-between text-xs text-gray-600 mt-1 font-orbitron">
-                        <span>20°C</span><span>35°C</span>
-                    </div>
-                    <div class="text-xs text-yellow-500/70 mt-1 font-orbitron" data-i18n="instTempAlert">▲ ABOVE SAFE THRESHOLD</div>
-                </div>
-
-                <!-- pH Gauge -->
-                <div class="tech-panel flex-1 p-4 rounded-xl relative overflow-hidden">
-                    <div class="panel-corner tl"></div><div class="panel-corner tr"></div>
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="font-orbitron text-xs text-emerald-400 tracking-widest" data-i18n="instGaugePHTitle">// pH LEVEL</span>
-                        <span class="live-dot normal"></span>
-                    </div>
-                    <div class="flex items-end gap-2">
-                        <span class="font-orbitron text-3xl font-black text-emerald-300">7.80</span>
-                        <span class="text-emerald-500 text-sm mb-1">pH</span>
-                    </div>
-                    <div class="mt-2 h-1.5 bg-gray-700 rounded-full overflow-hidden">
-                        <div class="h-full rounded-full bg-gradient-to-r from-red-500 via-emerald-400 to-blue-500" style="width:64%"></div>
-                    </div>
-                    <div class="flex justify-between text-xs text-gray-600 mt-1 font-orbitron">
-                        <span>6.0</span><span>9.0</span>
-                    </div>
-                    <div class="text-xs text-emerald-500/70 mt-1 font-orbitron" data-i18n="instPHAlert">✓ WITHIN NORMAL RANGE</div>
-                </div>
-
-                <!-- Pollution Gauge -->
-                <div class="tech-panel flex-1 p-4 rounded-xl relative overflow-hidden">
-                    <div class="panel-corner tl"></div><div class="panel-corner tr"></div>
-                    <div class="flex items-center justify-between mb-2">
-                        <span class="font-orbitron text-xs text-violet-400 tracking-widest" data-i18n="instGaugePollTitle">// WQI POLL.</span>
-                        <span class="live-dot warn"></span>
-                    </div>
-                    <div class="flex items-end gap-2">
-                        <span class="font-orbitron text-3xl font-black text-violet-300">45</span>
-                        <span class="text-violet-500 text-sm mb-1">WQI</span>
-                    </div>
-                    <div class="mt-2 h-1.5 bg-gray-700 rounded-full overflow-hidden">
-                        <div class="h-full rounded-full bg-gradient-to-r from-emerald-500 via-yellow-400 to-red-500" style="width:45%"></div>
-                    </div>
-                    <div class="flex justify-between text-xs text-gray-600 mt-1 font-orbitron">
-                        <span>0</span><span>100</span>
-                    </div>
-                    <div class="text-xs text-violet-400/70 mt-1 font-orbitron" data-i18n="instPollAlert">⚠ MILD CONTAMINATION</div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Bottom: ECharts Multi-line -->
-        <div class="tech-panel p-5 rounded-xl relative overflow-hidden">
-            <div class="panel-corner tl"></div><div class="panel-corner tr"></div>
-            <div class="panel-corner bl"></div><div class="panel-corner br"></div>
-            <h3 class="font-orbitron text-sm font-bold mb-4 text-cyan-400 tracking-widest" data-i18n="instChartTitle">// ECOLOGICAL RESILIENCE — 12M TREND</h3>
-            <div id="mainChart" style="width: 100%; height: 300px;"></div>
-        </div>
-
     </div>
 
     <script src="app.js"></script>
