@@ -429,3 +429,224 @@ body.pub-mode {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(6,182,212,0.3); border-radius: 10px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(6,182,212,0.6); }
+
+/* ========================================================================
+   Public View Upgrade: Interactive Sliders + Dynamic Coral Linkage
+   ======================================================================== */
+.coral-stage-card {
+    position: relative;
+    overflow: hidden;
+}
+.coral-stage-card::before {
+    content: '';
+    position: absolute;
+    inset: -40% -20% auto auto;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(6,182,212,0.15), transparent 65%);
+    pointer-events: none;
+}
+.coral-stage {
+    min-height: 185px;
+    background:
+        radial-gradient(circle at 50% 100%, rgba(16,185,129,0.22), transparent 42%),
+        linear-gradient(180deg, rgba(8,47,73,0.38), rgba(2,13,26,0.28));
+    border: 1px solid rgba(6,182,212,0.16);
+    transition: background 0.7s ease, border-color 0.7s ease, filter 0.7s ease;
+}
+.coral-art.dynamic {
+    width: min(360px, 100%);
+    height: 150px;
+    gap: 9px;
+    transition: filter 0.7s ease, opacity 0.7s ease, transform 0.7s ease;
+}
+.coral-art.dynamic .coral-branch {
+    box-shadow: 0 0 16px rgba(255, 107, 157, 0.28);
+    transition: background 0.7s ease, box-shadow 0.7s ease, opacity 0.7s ease, filter 0.7s ease;
+}
+.coral-art.dynamic .coral-branch.b1 { width: 18px; height: 80px; }
+.coral-art.dynamic .coral-branch.b2 { width: 24px; height: 112px; }
+.coral-art.dynamic .coral-branch.b3 { width: 20px; height: 96px; }
+.coral-art.dynamic .coral-branch.b4 { width: 17px; height: 72px; }
+.coral-art.dynamic .coral-branch.b5 { width: 14px; height: 66px; }
+.coral-art.dynamic .coral-fish { transition: opacity 0.6s ease, filter 0.6s ease; }
+.coral-art.dynamic .bleach-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 65%, rgba(255,255,255,0.42), transparent 42%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.7s ease;
+}
+.coral-art.dynamic.watch-state {
+    filter: saturate(0.72) brightness(0.94);
+}
+.coral-art.dynamic.watch-state .coral-branch {
+    background: linear-gradient(to top, #9a6a43, #eab308) !important;
+    box-shadow: 0 0 12px rgba(245,158,11,0.22);
+}
+.coral-art.dynamic.danger-state {
+    filter: grayscale(0.92) saturate(0.18) brightness(1.18);
+    transform: translateY(2px) scale(0.98);
+}
+.coral-art.dynamic.danger-state .coral-branch {
+    background: linear-gradient(to top, #777, #f1f5f9) !important;
+    opacity: 0.86;
+    box-shadow: 0 0 18px rgba(226,232,240,0.24);
+    animation-duration: 5s;
+}
+.coral-art.dynamic.danger-state .coral-fish,
+.coral-art.dynamic.danger-state .bubbles {
+    opacity: 0.18;
+    filter: grayscale(1);
+}
+.coral-art.dynamic.danger-state .bleach-overlay { opacity: 1; }
+.coral-state-watch .coral-stage {
+    background:
+        radial-gradient(circle at 50% 100%, rgba(245,158,11,0.18), transparent 45%),
+        linear-gradient(180deg, rgba(67,56,202,0.16), rgba(2,13,26,0.34));
+    border-color: rgba(245,158,11,0.35);
+}
+.coral-state-danger .coral-stage {
+    background:
+        radial-gradient(circle at 50% 100%, rgba(226,232,240,0.2), transparent 48%),
+        linear-gradient(180deg, rgba(30,41,59,0.42), rgba(2,6,23,0.6));
+    border-color: rgba(248,113,113,0.42);
+    filter: contrast(0.92);
+}
+.coral-status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    border: 1px solid transparent;
+    backdrop-filter: blur(10px);
+    white-space: nowrap;
+}
+.coral-status-healthy {
+    background: rgba(16,185,129,0.18);
+    color: #6ee7b7;
+    border-color: rgba(16,185,129,0.4);
+}
+.coral-status-watch {
+    background: rgba(245,158,11,0.18);
+    color: #fcd34d;
+    border-color: rgba(245,158,11,0.42);
+}
+.coral-status-danger {
+    background: rgba(239,68,68,0.18);
+    color: #fca5a5;
+    border-color: rgba(239,68,68,0.45);
+    box-shadow: 0 0 18px rgba(239,68,68,0.16);
+}
+.recovery-bar.watch-progress {
+    background: linear-gradient(90deg, #f97316, #facc15);
+}
+.recovery-bar.danger-progress {
+    background: linear-gradient(90deg, #991b1b, #ef4444, #e5e7eb);
+}
+
+.slider-card {
+    position: relative;
+    overflow: hidden;
+}
+.slider-card::after {
+    content: '';
+    position: absolute;
+    inset: auto -30px -50px auto;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(6,182,212,0.1), transparent 65%);
+    pointer-events: none;
+}
+.slider-value {
+    font-family: 'Orbitron', monospace;
+    font-size: 13px;
+    font-weight: 900;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+.ocean-slider {
+    --slider-progress: 50%;
+    --track-bg: rgba(15, 23, 42, 0.82);
+    --accent: #06b6d4;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 12px;
+    border-radius: 999px;
+    outline: none;
+    cursor: pointer;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent) var(--slider-progress), var(--track-bg) var(--slider-progress), var(--track-bg) 100%);
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.34);
+}
+.ocean-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    background: #e0f2fe;
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 0 5px rgba(255,255,255,0.04), 0 0 18px color-mix(in srgb, var(--accent), transparent 35%);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.ocean-slider::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    background: #e0f2fe;
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 0 5px rgba(255,255,255,0.04), 0 0 18px rgba(6,182,212,0.35);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.ocean-slider:hover::-webkit-slider-thumb { transform: scale(1.08); }
+.ocean-slider:hover::-moz-range-thumb { transform: scale(1.08); }
+.temp-slider { --accent: #f59e0b; }
+.ph-slider { --accent: #10b981; }
+.pollution-slider { --accent: #8b5cf6; }
+.status-badge.danger {
+    background: rgba(239,68,68,0.2);
+    color: #fca5a5;
+    border: 1px solid rgba(239,68,68,0.45);
+}
+
+.knowledge-card {
+    background:
+        linear-gradient(135deg, rgba(6,182,212,0.08), rgba(255,255,255,0.035)),
+        rgba(255,255,255,0.04);
+}
+.knowledge-item {
+    background: rgba(255,255,255,0.045);
+    border: 1px solid rgba(6,182,212,0.1);
+    transition: transform .3s ease, border-color .3s ease, background .3s ease;
+}
+.knowledge-item:hover {
+    transform: translateY(-3px);
+    border-color: rgba(6,182,212,0.35);
+    background: rgba(6,182,212,0.075);
+}
+.knowledge-icon {
+    display: inline-flex;
+    width: 34px;
+    height: 34px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    font-size: 19px;
+}
+
+@media (max-width: 640px) {
+    .coral-art.dynamic { height: 130px; transform: scale(0.92); }
+    .coral-art.dynamic.danger-state { transform: translateY(2px) scale(0.9); }
+    .coral-stage { min-height: 160px; }
+}
