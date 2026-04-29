@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海洋数字共生系统 Demo</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-blue-50 text-gray-800 font-sans">
+
+    <nav class="flex justify-between items-center p-4 bg-white shadow-md sticky top-0 z-50">
+        <h1 class="text-xl font-bold text-blue-700">🌊 海洋数字共生计划</h1>
+        <button id="viewToggleBtn" class="bg-blue-600 text-white px-5 py-2 rounded-full shadow hover:bg-blue-700 transition font-medium">
+            🏢 切换至机构专业版
+        </button>
+    </nav>
+
+    <div id="publicView" class="container mx-auto p-6 block">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">南海海域实时生态状态</h2>
+            
+            <div class="bg-yellow-100 border-l-8 border-yellow-500 text-yellow-800 p-6 mb-6 rounded shadow-sm">
+                <h3 class="text-xl font-bold mb-2">⚠️ 当前状态：轻度预警</h3>
+                <p>南海 X 海域目前处于珊瑚修复期，生态系统正处于脆弱的恢复阶段。</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-lg font-bold mb-4 text-blue-600">行动指南</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <span class="mr-2">🤿</span>
+                        <p><strong>游客群体：</strong>请避免在该区域潜水踩踏，使用环保型防晒霜。</p>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-2">🎣</span>
+                        <p><strong>渔民群体：</strong>请暂缓底拖网作业，避免抛锚破坏底层生境。</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="institutionalView" class="container mx-auto p-6 hidden">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">环保部门数据决策大屏</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-gray-900 text-gray-100 p-6 rounded-lg shadow-lg border border-gray-700">
+                <h3 class="text-lg font-bold mb-4 text-blue-400">底层传感器实时物理数据</h3>
+                <ul class="space-y-2 font-mono">
+                    <li>> 实时水温: <span class="text-yellow-400">29.5 °C (偏高)</span></li>
+                    <li>> 海水盐度: 34.2 PSU</li>
+                    <li>> 溶解氧量: 6.5 mg/L</li>
+                </ul>
+            </div>
+            
+            <div class="bg-gray-900 text-gray-100 p-6 rounded-lg shadow-lg border border-gray-700">
+                <h3 class="text-lg font-bold mb-4 text-green-400">AI 视觉实时量化指标</h3>
+                <ul class="space-y-2 font-mono">
+                    <li>> 珊瑚退化率: <span class="text-red-400">15% (触发轻度预警阈值)</span></li>
+                    <li>> 海草床覆盖率: 68%</li>
+                    <li>> 优势生物群落: 雀鲷科 (正常)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="mt-6 bg-white p-6 rounded-lg shadow border border-gray-200">
+            <h3 class="text-lg font-bold mb-4 text-gray-800">生态系统抗冲击力（抵抗力）趋势走势</h3>
+            <div id="mainChart" style="width: 100%; height: 300px;" class="bg-gray-50 flex items-center justify-center text-gray-400">
+                [ ECharts 复杂可视化图表将在这里渲染 ]
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
