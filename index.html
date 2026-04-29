@@ -44,110 +44,107 @@
                 <p class="text-yellow-100/80 text-sm leading-relaxed" data-i18n="pubAlertDesc">南海 X 海域目前处于珊瑚修复期，生态系统正处于脆弱的恢复阶段。</p>
             </div>
 
-            <!-- ===== CORAL HEALTH VISUAL (PUBLIC) ===== -->
-            <div class="glass-card p-6 rounded-2xl">
-                <h3 class="text-base font-bold mb-4 text-cyan-300 tracking-wide" data-i18n="pubCoralTitle">🪸 珊瑚健康状态对比</h3>
-                <div class="grid grid-cols-2 gap-4">
-                    <!-- Healthy Coral -->
-                    <div class="coral-card coral-healthy rounded-xl p-4 text-center relative overflow-hidden">
-                        <div class="coral-art healthy">
-                            <div class="coral-branch b1"></div>
-                            <div class="coral-branch b2"></div>
-                            <div class="coral-branch b3"></div>
-                            <div class="coral-branch b4"></div>
-                            <div class="coral-branch b5"></div>
-                            <div class="coral-fish f1"></div>
-                            <div class="coral-fish f2"></div>
-                            <div class="bubbles">
-                                <span></span><span></span><span></span>
-                            </div>
-                        </div>
-                        <div class="mt-3">
-                            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/30 text-emerald-300 border border-emerald-500/40" data-i18n="pubCoralHealthy">健康珊瑚</span>
-                            <p class="text-xs text-gray-300/70 mt-2" data-i18n="pubCoralHealthyDesc">色彩鲜艳，生物多样性高</p>
-                        </div>
+            <!-- ===== DYNAMIC CORAL HEALTH VISUAL (PUBLIC) ===== -->
+            <div id="interactiveCoralCard" class="glass-card coral-stage-card p-6 rounded-2xl">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-5">
+                    <div>
+                        <h3 class="text-base font-bold text-cyan-300 tracking-wide" data-i18n="pubCoralTitle">🪸 珊瑚健康状态模拟器</h3>
+                        <p class="text-xs text-gray-400 mt-1" data-i18n="pubCoralHint">拖动下方指标，观察珊瑚颜色和健康状态如何变化。</p>
                     </div>
-                    <!-- Recovering Coral -->
-                    <div class="coral-card coral-recovering rounded-xl p-4 text-center relative overflow-hidden">
-                        <div class="coral-art recovering">
-                            <div class="coral-branch b1 bleached"></div>
-                            <div class="coral-branch b2 bleached"></div>
-                            <div class="coral-branch b3 bleached partial"></div>
-                            <div class="coral-branch b4 bleached"></div>
-                            <div class="coral-branch b5 bleached partial"></div>
-                            <div class="scan-line-pub"></div>
-                        </div>
-                        <div class="mt-3">
-                            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-amber-500/30 text-amber-300 border border-amber-500/40" data-i18n="pubCoralRecovering">修复中珊瑚</span>
-                            <p class="text-xs text-gray-300/70 mt-2" data-i18n="pubCoralRecoveringDesc">白化中，需要人类保护</p>
-                        </div>
+                    <span id="coralStatusBadge" class="coral-status-badge coral-status-watch" data-i18n="pubCoralStatusWatch">轻度压力</span>
+                </div>
+
+                <div class="coral-stage rounded-2xl p-5 relative overflow-hidden">
+                    <div id="dynamicCoralArt" class="coral-art dynamic healthy-state mx-auto">
+                        <div class="coral-branch b1"></div>
+                        <div class="coral-branch b2"></div>
+                        <div class="coral-branch b3"></div>
+                        <div class="coral-branch b4"></div>
+                        <div class="coral-branch b5"></div>
+                        <div class="coral-fish f1"></div>
+                        <div class="coral-fish f2"></div>
+                        <div class="bubbles"><span></span><span></span><span></span></div>
+                        <div class="bleach-overlay"></div>
                     </div>
                 </div>
-                <!-- Recovery progress bar -->
+
                 <div class="mt-4">
                     <div class="flex justify-between text-xs text-gray-400 mb-1">
                         <span data-i18n="pubRecoveryLabel">珊瑚整体恢复进度</span>
-                        <span class="text-cyan-400 font-bold">62%</span>
+                        <span id="recoveryValue" class="text-cyan-400 font-bold font-orbitron">62%</span>
                     </div>
                     <div class="h-2 bg-gray-700/50 rounded-full overflow-hidden">
-                        <div class="h-full rounded-full recovery-bar" style="width: 62%"></div>
+                        <div id="recoveryBar" class="h-full rounded-full recovery-bar transition-all duration-500" style="width: 62%"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- ===== THREE DATA INDICATORS (PUBLIC) ===== -->
+            <!-- ===== INTERACTIVE SLIDERS (PUBLIC) ===== -->
             <div class="glass-card p-6 rounded-2xl">
-                <h3 class="text-base font-bold mb-5 text-cyan-300 tracking-wide" data-i18n="pubMetricsTitle">🌡️ 海域关键健康指标</h3>
-                <div class="grid grid-cols-3 gap-4">
+                <h3 class="text-base font-bold mb-2 text-cyan-300 tracking-wide" data-i18n="pubMetricsTitle">🌡️ 海域关键健康指标</h3>
+                <p class="text-xs text-gray-400 mb-5" data-i18n="pubSliderHint">试着调高水温、降低 pH 或增加污染，看看珊瑚会发生什么。</p>
 
-                    <!-- Water Temp -->
-                    <div class="metric-card text-center p-3 rounded-xl">
-                        <div class="donut-wrap mx-auto mb-2">
-                            <svg viewBox="0 0 80 80" class="donut-svg">
-                                <circle cx="40" cy="40" r="30" fill="none" stroke="#1e3a5f" stroke-width="8"/>
-                                <circle cx="40" cy="40" r="30" fill="none" stroke="#f59e0b" stroke-width="8"
-                                    stroke-dasharray="113 189" stroke-dashoffset="47" stroke-linecap="round"
-                                    class="donut-circle"/>
-                            </svg>
-                            <span class="donut-label text-yellow-400">🌡️</span>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Water Temp Slider -->
+                    <div class="metric-card slider-card p-4 rounded-xl">
+                        <div class="flex items-center justify-between mb-3">
+                            <p class="text-sm font-bold text-gray-100" data-i18n="pubTempLabel">水温</p>
+                            <span id="tempValue" class="slider-value text-yellow-300">29.5°C</span>
                         </div>
-                        <div class="status-badge warn" data-i18n="pubTempStatus">偏高预警</div>
-                        <p class="text-xs text-gray-400 mt-1" data-i18n="pubTempLabel">水温</p>
-                        <p class="text-lg font-bold text-yellow-300 font-orbitron">29.5°C</p>
+                        <input id="tempSlider" class="ocean-slider temp-slider" type="range" min="26" max="33" step="0.1" value="29.5" aria-label="Water temperature">
+                        <div class="flex justify-between text-[10px] text-gray-500 mt-2 font-orbitron"><span>26°C</span><span>33°C</span></div>
+                        <div id="tempStatus" class="status-badge warn mt-3" data-i18n="pubTempStatus">偏高预警</div>
                     </div>
 
-                    <!-- pH -->
-                    <div class="metric-card text-center p-3 rounded-xl">
-                        <div class="donut-wrap mx-auto mb-2">
-                            <svg viewBox="0 0 80 80" class="donut-svg">
-                                <circle cx="40" cy="40" r="30" fill="none" stroke="#1e3a5f" stroke-width="8"/>
-                                <circle cx="40" cy="40" r="30" fill="none" stroke="#10b981" stroke-width="8"
-                                    stroke-dasharray="145 189" stroke-dashoffset="47" stroke-linecap="round"
-                                    class="donut-circle"/>
-                            </svg>
-                            <span class="donut-label text-emerald-400">⚗️</span>
+                    <!-- pH Slider -->
+                    <div class="metric-card slider-card p-4 rounded-xl">
+                        <div class="flex items-center justify-between mb-3">
+                            <p class="text-sm font-bold text-gray-100" data-i18n="pubPHLabel">海水 pH</p>
+                            <span id="phValue" class="slider-value text-emerald-300">7.80</span>
                         </div>
-                        <div class="status-badge safe" data-i18n="pubPHStatus">酸碱度安全</div>
-                        <p class="text-xs text-gray-400 mt-1" data-i18n="pubPHLabel">海水 pH</p>
-                        <p class="text-lg font-bold text-emerald-300 font-orbitron">7.80</p>
+                        <input id="phSlider" class="ocean-slider ph-slider" type="range" min="7.3" max="8.4" step="0.01" value="7.80" aria-label="Seawater pH">
+                        <div class="flex justify-between text-[10px] text-gray-500 mt-2 font-orbitron"><span>7.3</span><span>8.4</span></div>
+                        <div id="phStatus" class="status-badge safe mt-3" data-i18n="pubPHStatus">酸碱度安全</div>
                     </div>
 
-                    <!-- Pollution -->
-                    <div class="metric-card text-center p-3 rounded-xl">
-                        <div class="donut-wrap mx-auto mb-2">
-                            <svg viewBox="0 0 80 80" class="donut-svg">
-                                <circle cx="40" cy="40" r="30" fill="none" stroke="#1e3a5f" stroke-width="8"/>
-                                <circle cx="40" cy="40" r="30" fill="none" stroke="#a78bfa" stroke-width="8"
-                                    stroke-dasharray="80 189" stroke-dashoffset="47" stroke-linecap="round"
-                                    class="donut-circle"/>
-                            </svg>
-                            <span class="donut-label text-violet-400">🧪</span>
+                    <!-- Pollution Slider -->
+                    <div class="metric-card slider-card p-4 rounded-xl">
+                        <div class="flex items-center justify-between mb-3">
+                            <p class="text-sm font-bold text-gray-100" data-i18n="pubPollutionLabel">污染程度</p>
+                            <span id="pollutionValue" class="slider-value text-violet-300">WQI 45</span>
                         </div>
-                        <div class="status-badge mild" data-i18n="pubPollutionStatus">轻度影响</div>
-                        <p class="text-xs text-gray-400 mt-1" data-i18n="pubPollutionLabel">污染程度</p>
-                        <p class="text-lg font-bold text-violet-300 font-orbitron">WQI 45</p>
+                        <input id="pollutionSlider" class="ocean-slider pollution-slider" type="range" min="0" max="100" step="1" value="45" aria-label="Pollution level">
+                        <div class="flex justify-between text-[10px] text-gray-500 mt-2 font-orbitron"><span>0</span><span>100</span></div>
+                        <div id="pollutionStatus" class="status-badge mild mt-3" data-i18n="pubPollutionStatus">轻度影响</div>
                     </div>
+                </div>
+            </div>
 
+            <!-- ===== TRIVIA / KNOWLEDGE CARD (PUBLIC) ===== -->
+            <div class="glass-card knowledge-card p-6 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-2xl">💡</span>
+                    <div>
+                        <h3 class="text-base font-bold text-cyan-300" data-i18n="pubTriviaTitle">科普小知识</h3>
+                        <p class="text-xs text-gray-400" data-i18n="pubTriviaSubtitle">这些数字为什么会影响珊瑚？</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="knowledge-item rounded-xl p-4">
+                        <span class="knowledge-icon">🌡️</span>
+                        <h4 class="text-sm font-bold text-white mt-2" data-i18n="pubTriviaTempTitle">温度升高</h4>
+                        <p class="text-xs leading-relaxed text-gray-300 mt-2" data-i18n="pubTriviaTempDesc">你知道吗？海水温度哪怕只升高 1–2°C，珊瑚就可能因压力排出体内的虫黄藻，从而失去颜色。</p>
+                    </div>
+                    <div class="knowledge-item rounded-xl p-4">
+                        <span class="knowledge-icon">⚗️</span>
+                        <h4 class="text-sm font-bold text-white mt-2" data-i18n="pubTriviaPHTitle">海水变酸</h4>
+                        <p class="text-xs leading-relaxed text-gray-300 mt-2" data-i18n="pubTriviaPHDesc">pH 下降代表海水更酸，珊瑚会更难形成坚硬骨骼，新的珊瑚也更难长大。</p>
+                    </div>
+                    <div class="knowledge-item rounded-xl p-4">
+                        <span class="knowledge-icon">🧪</span>
+                        <h4 class="text-sm font-bold text-white mt-2" data-i18n="pubTriviaPollTitle">污染增加</h4>
+                        <p class="text-xs leading-relaxed text-gray-300 mt-2" data-i18n="pubTriviaPollDesc">污染物会让海水变浑浊，也可能带来有害藻类。珊瑚获得的阳光变少，恢复速度会变慢。</p>
+                    </div>
                 </div>
             </div>
 
